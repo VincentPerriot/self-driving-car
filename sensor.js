@@ -1,8 +1,8 @@
 class Sensor{
     constructor(car){
         this.car = car;
-        this.rayCount= 4;
-        this.rayLength = 100;
+        this.rayCount= 5;
+        this.rayLength = 150;
         this.raySpread = Math.PI/2;
 
         this.rays=[];
@@ -85,26 +85,26 @@ class Sensor{
                 end = this.readings[i];
             }
 
-            ctx.beginPath();
-            ctx.lineWidth=2;
-            ctx.strokeStyle="yellow";
-            ctx.moveTo(
+            carCtx.beginPath();
+            carCtx.lineWidth=2;
+            carCtx.strokeStyle="yellow";
+            carCtx.moveTo(
                 this.rays[i][0].x,
                 this.rays[i][0].y
             );
-            ctx.lineTo(end.x, end.y);
+            carCtx.lineTo(end.x, end.y);
 
-            ctx.stroke();
+            carCtx.stroke();
 
-            ctx.beginPath();
-            ctx.lineWidth=2;
-            ctx.strokeStyle="black";
-            ctx.moveTo(
+            carCtx.beginPath();
+            carCtx.lineWidth=2;
+            carCtx.strokeStyle="black";
+            carCtx.moveTo(
                 this.rays[i][1].x,
                 this.rays[i][1].y
             );
-            ctx.lineTo(end.x, end.y);
-            ctx.stroke();
+            carCtx.lineTo(end.x, end.y);
+            carCtx.stroke();
             
         };     
     }
